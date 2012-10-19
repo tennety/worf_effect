@@ -1,13 +1,13 @@
 !SLIDE
+<link media="screen" type="text/css" href="styles.css" rel="stylesheet" />
 
 # The Worf Effect
 <img src='../images/worf.jpg' />
 
 !SLIDE
 
-> The Worf Effect - n. When a resident tough character is beaten up to quickly show how badass someone else is.
-
-<cite>[_It's All Geek To Me -- The Worf Effect_](http://panelsonpages.com/?p=38275)</cite>
+> **The Worf Effect** - n. When a resident tough character is beaten up to quickly show how badass someone else is.
+<sup>[*](http://panelsonpages.com/?p=38275)</sup>
 
 !SLIDE
 
@@ -17,13 +17,13 @@ What this talk is *really* about:
 
 !SLIDE
 
-### What's a rule engine?
+## What's a rule engine?
 
 <img src='../images/Rule_Engine.png' />
 
 !SLIDE
 
-### Why use one?
+## Why use one?
 
  - Eliminate nested conditional logic
  - Scalable to frequently changing data
@@ -32,7 +32,7 @@ What this talk is *really* about:
 
 !SLIDE
 
-### Introducing Ruleby
+# Introducing Ruleby
 
 A rule engine written in Ruby
 
@@ -41,7 +41,7 @@ A rule engine written in Ruby
 
 !SLIDE code
 
-### Given these datatypes:
+## Given these datatypes:
 
 @@@ ruby
       class Badass
@@ -57,7 +57,7 @@ A rule engine written in Ruby
 
 !SLIDE
 
-### And these datatypes:
+## And:
 
 @@@ ruby
       class FightStat
@@ -71,7 +71,7 @@ A rule engine written in Ruby
 
 !SLIDE
 
-### We can construct rules such as:
+## We can construct rules such as:
 
 > When there is a fight between Worf and another badass
 
@@ -81,7 +81,7 @@ A rule engine written in Ruby
 
 !SLIDE
 
-### In Ruleby:
+## In Ruleby:
 
 @@@ ruby
       rule :worf_loses,
@@ -104,7 +104,7 @@ A rule engine written in Ruby
 
 !SLIDE
 
-### Data is represented as "facts":
+## Data is represented as "facts":
 
 @@@ ruby
       worf = Klingon.new("Worf", 100)
@@ -114,10 +114,11 @@ A rule engine written in Ruby
 
 !SLIDE
 
-### We let the engine know the rules and facts:
+## We let the engine know the rules and facts:
 @@@ ruby
       engine :engine do |e|
         WorfEffectRulebook.new(e).rules
+
         [worf, riker, borg].map{|badass| e.assert badass}
         e.assert FightStat.new([riker, worf], worf)
         e.assert FightStat.new([borg, worf], borg)
@@ -129,3 +130,10 @@ A rule engine written in Ruby
 !SLIDE
 
 #Demo
+
+!SLIDE
+
+## Conflict resolution
+
+ - Salience/priority
+ - Recency
