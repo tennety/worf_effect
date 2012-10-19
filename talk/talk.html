@@ -4880,18 +4880,24 @@ jQuery.extend( jQuery.easing,
         
           <div class="">
             <div id="slide-2" class="content">
-              <p>What this talk is <em>really</em> about:</p><h1>A rule engine! In Ruby!!</h1>
+              <h3>What's this talk is <em>really</em> about?</h3>
             </div>
           </div>
         
           <div class="">
             <div id="slide-3" class="content">
-              <h2>What's a rule engine?</h2><p><img src="../images/Rule_Engine.png"></p>
+              <h1>A rule engine! In Ruby!!</h1>
             </div>
           </div>
         
           <div class="">
             <div id="slide-4" class="content">
+              <h2>What's a rule engine?</h2><p><img src="../images/Rule_Engine.png"></p>
+            </div>
+          </div>
+        
+          <div class="">
+            <div id="slide-5" class="content">
               <h2>Why use one?</h2><ul>
 <li>Eliminate nested conditional logic</li>
 <li>Scalable to frequently changing data</li>
@@ -4902,8 +4908,8 @@ jQuery.extend( jQuery.easing,
           </div>
         
           <div class="">
-            <div id="slide-5" class="content">
-              <h1>Introducing Ruleby</h1><p>A rule engine written in Ruby</p><ul>
+            <div id="slide-6" class="content">
+              <h1>Ruleby</h1><p>A rule engine written in Ruby</p><ul>
 <li><a href="https://github.com/Codalytics/ruleby">Github</a></li>
 <li><a href="http://www.confreaks.com/videos/604-rubyhoedown2008-ruleby-the-rules-engine-for-ruby">Presentation at Ruby Hoedown 08</a></li>
 </ul>
@@ -4911,7 +4917,7 @@ jQuery.extend( jQuery.easing,
           </div>
         
           <div class=" code">
-            <div id="slide-6" class="content">
+            <div id="slide-7" class="content">
               <h2>Given these datatypes:</h2><div class="highlight ruby code highlight"><pre>  <span class="k">class</span> <span class="nc">Badass</span>
     <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:badass_level</span>
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">badass_level</span><span class="p">)</span>
@@ -4925,8 +4931,8 @@ jQuery.extend( jQuery.easing,
             </div>
           </div>
         
-          <div class="">
-            <div id="slide-7" class="content">
+          <div class=" code">
+            <div id="slide-8" class="content">
               <h2>And:</h2><div class="highlight ruby code highlight"><pre>  <span class="k">class</span> <span class="nc">FightStat</span>
     <span class="kp">attr_accessor</span> <span class="ss">:badasses</span><span class="p">,</span> <span class="ss">:winner</span>
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">badasses</span><span class="p">,</span> <span class="n">winner</span><span class="p">)</span>
@@ -4939,7 +4945,7 @@ jQuery.extend( jQuery.easing,
           </div>
         
           <div class="">
-            <div id="slide-8" class="content">
+            <div id="slide-9" class="content">
               <h2>We can construct rules such as:</h2><blockquote>
 <p>When there is a fight between Worf and another badass</p>
 
@@ -4950,8 +4956,8 @@ jQuery.extend( jQuery.easing,
             </div>
           </div>
         
-          <div class="">
-            <div id="slide-9" class="content">
+          <div class=" code">
+            <div id="slide-10" class="content">
               <h2>In Ruleby:</h2><div class="highlight ruby code highlight"><pre>  <span class="n">rule</span> <span class="ss">:worf_loses</span><span class="p">,</span>
     <span class="o">[</span><span class="no">Klingon</span><span class="p">,</span> <span class="ss">:worf</span><span class="p">,</span>
      <span class="n">m</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"Worf"</span><span class="o">]</span><span class="p">,</span>
@@ -4972,8 +4978,8 @@ jQuery.extend( jQuery.easing,
             </div>
           </div>
         
-          <div class="">
-            <div id="slide-10" class="content">
+          <div class=" code">
+            <div id="slide-11" class="content">
               <h2>Data is represented as "facts":</h2><div class="highlight ruby code highlight"><pre>  <span class="n">worf</span> <span class="o">=</span> <span class="no">Klingon</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"Worf"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
   <span class="n">riker</span> <span class="o">=</span> <span class="no">Badass</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"Riker"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
   <span class="n">borg</span> <span class="o">=</span> <span class="no">Badass</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"Drone"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -4981,8 +4987,8 @@ jQuery.extend( jQuery.easing,
             </div>
           </div>
         
-          <div class="">
-            <div id="slide-11" class="content">
+          <div class=" code">
+            <div id="slide-12" class="content">
               <h2>We let the engine know the rules and facts:</h2><div class="highlight ruby code highlight"><pre>  <span class="n">engine</span> <span class="ss">:engine</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
     <span class="no">WorfEffectRulebook</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">rules</span>
 
@@ -4997,13 +5003,13 @@ jQuery.extend( jQuery.easing,
           </div>
         
           <div class="">
-            <div id="slide-12" class="content">
+            <div id="slide-13" class="content">
               <h1>Demo</h1>
             </div>
           </div>
         
           <div class="">
-            <div id="slide-13" class="content">
+            <div id="slide-14" class="content">
               <h2>Conflict resolution</h2><ul>
 <li>Salience/priority</li>
 <li>Recency</li>

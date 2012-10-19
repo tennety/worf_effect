@@ -49,7 +49,7 @@ class WorfEffectRulebook < Rulebook
        m.badass_level(:worf_level, &c{|my_level, worf_level| my_level > worf_level}) => :my_level]\
     do |vars|
       puts "#{vars[:badass].name} defeated #{vars[:worf].name}, so (s)he must be *really* badass."
-      puts "(S)he has #{vars[:my_level]} points!"
+      puts "#{vars[:badass].name} has #{vars[:my_level]} points!"
     end
 
     rule :less_badass,
@@ -62,7 +62,7 @@ class WorfEffectRulebook < Rulebook
        m.badass_level(:worf_level, &c{|my_level, worf_level| my_level <= worf_level}) => :my_level]\
     do |vars|
       puts "#{vars[:badass].name} was defeated by #{vars[:worf].name}, so (s)he must not be *really* badass."
-      puts "(S)he has #{vars[:my_level]} points!"
+      puts "#{vars[:badass].name} has #{vars[:my_level]} points!"
     end
   end
 end

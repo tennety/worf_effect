@@ -11,7 +11,9 @@
 
 !SLIDE
 
-What this talk is *really* about:
+### What's this talk is *really* about?
+
+!SLIDE
 
 # A rule engine! In Ruby!!
 
@@ -32,7 +34,7 @@ What this talk is *really* about:
 
 !SLIDE
 
-# Introducing Ruleby
+# Ruleby
 
 A rule engine written in Ruby
 
@@ -55,7 +57,7 @@ A rule engine written in Ruby
       end
 @@@
 
-!SLIDE
+!SLIDE code
 
 ## And:
 
@@ -79,7 +81,7 @@ A rule engine written in Ruby
 
 > Then the other badass' badass level is more than Worf's.
 
-!SLIDE
+!SLIDE code
 
 ## In Ruleby:
 
@@ -102,7 +104,7 @@ A rule engine written in Ruby
       end
 @@@
 
-!SLIDE
+!SLIDE code
 
 ## Data is represented as "facts":
 
@@ -112,7 +114,7 @@ A rule engine written in Ruby
       borg = Badass.new("Drone", 100)
 @@@
 
-!SLIDE
+!SLIDE code
 
 ## We let the engine know the rules and facts:
 @@@ ruby
